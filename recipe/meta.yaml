@@ -1,17 +1,16 @@
-{% set name = "pybind11_json" %}
-{% set version = "0.2.15" %}
-{% set sha256 = "9a4a1494549a2db27bc4c5a16743a5c88ebc18e13c73019c56f399ae0310baf2" %}
+{% set version = "0.3.0" %}
+{% set sha256 = "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/pybind/{{ name }}/archive/{{ version }}.tar.gz
+  url: https://github.com/pybind/pybind11_json/archive/{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 0
 
 requirements:
   build:
@@ -25,7 +24,8 @@ requirements:
     - make   # [unix]
   host:
     - python
-    - pybind11 >=2.2.4,<3.0
+    - libpython
+    - pybind11 >=3.1,<4.0
     - nlohmann_json >=3.2.0,<4.0
   run:
     - python
